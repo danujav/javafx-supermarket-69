@@ -2,6 +2,8 @@ package lk.ijse.supermarket.controller;
 
 import com.github.plushaze.traynotification.notification.Notifications;
 import com.github.plushaze.traynotification.notification.TrayNotification;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +12,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javax.management.Notification;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import lk.ijse.supermarket.model.Customer;
+import lk.ijse.supermarket.model.tm.CustomerTm;
 
 public class MainFormController {
     @FXML
