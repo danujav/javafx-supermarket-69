@@ -5,7 +5,10 @@ import com.github.plushaze.traynotification.notification.TrayNotification;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import javax.management.Notification;
 import java.io.IOException;
@@ -13,6 +16,8 @@ import java.io.IOException;
 public class MainFormController {
     @FXML
     private AnchorPane centerNode;
+    @FXML
+    private AnchorPane root;
 
     public void initialize() throws IOException {
         loadDashboardForm();
@@ -37,22 +42,37 @@ public class MainFormController {
     }
 
     @FXML
-    void btnCustomerOnAction(ActionEvent event) {
+    void btnCustomerOnAction(ActionEvent event) throws IOException {
+        AnchorPane customerPane = FXMLLoader.load(this.getClass().getResource("/view/customer_form.fxml"));
 
+        centerNode.getChildren().clear();
+        centerNode.getChildren().add(customerPane);
     }
 
     @FXML
-    void btnDashboardOnAction(ActionEvent event) {
+    void btnDashboardOnAction(ActionEvent event) throws IOException {
+        AnchorPane dashboardPane = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
 
+        centerNode.getChildren().clear();
+        centerNode.getChildren().add(dashboardPane);
     }
 
     @FXML
-    void btnItemOnAction(ActionEvent event) {
+    void btnItemOnAction(ActionEvent event) throws IOException {
+        AnchorPane itemPane = FXMLLoader.load(this.getClass().getResource("/view/item_form.fxml"));
 
+        centerNode.getChildren().clear();
+        centerNode.getChildren().add(itemPane);
     }
 
     @FXML
-    void btnLogoutOnAction(ActionEvent event) {
+    void btnLogoutOnAction(ActionEvent event) throws IOException {
+        Pane loginPane = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
 
+        Scene scene = new Scene(loginPane);
+
+        Stage stage = (Stage) this.root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 }
