@@ -29,7 +29,7 @@ public class CustomerFormController {
     @FXML
     private TableView<CustomerTm> tblCustomer;
 
-    public void initialize() throws IOException {
+    public void initialize() {
         loadAllCustomers();
         setCellValueFactory();
     }
@@ -41,9 +41,9 @@ public class CustomerFormController {
     }
 
     private void loadAllCustomers() {
-        // fetch all customers from the MYSQL Database
+         /*let's imagine this getcustomers() method
+        fetch the all customer objects from the MySQL database and return Customer object arraylist*/
         List<Customer> customerList = getCustomers();
-
 
         ObservableList<CustomerTm> obList = FXCollections.observableArrayList();
 

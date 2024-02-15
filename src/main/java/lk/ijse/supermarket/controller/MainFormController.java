@@ -13,13 +13,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import lk.ijse.supermarket.model.Customer;
-import lk.ijse.supermarket.model.tm.CustomerTm;
 
 public class MainFormController {
     @FXML
