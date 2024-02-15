@@ -16,11 +16,11 @@ public class MainFormController {
     }
 
     private void loadDashboardForm() throws IOException {
-        AnchorPane dashboarPane = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
+        AnchorPane dashboardPane = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
 
 
         centerNode.getChildren().clear();
-        centerNode.getChildren().add(dashboarPane);
+        centerNode.getChildren().add(dashboardPane);
     }
 
     @FXML
